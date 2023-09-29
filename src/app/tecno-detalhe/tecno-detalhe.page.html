@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{tecno.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card *ngIf="tecno">
+    <ion-card-header>
+      <img *ngIf="tecno.imagem" src="{{tecno.imagem}}" />
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1 style="color: black;">
+        {{tecno.nome}}
+        <ion-icon
+          name="star"
+          [color]="tecno.favorito===true ? 'warning' : ('light')"
+        ></ion-icon>
+      </h1>
+    </ion-card-content>
+    <ion-item>
+      <p >{{tecno.texto}}</p>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <h1 style="color: black;">Exemplos:</h1>
+      <ion-item>
+        <p>{{tecno.exemplos}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
